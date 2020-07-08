@@ -1,0 +1,3 @@
+#!/bin/sh
+/usr/bin/maxscale -f /etc/maxscale.cnf -U maxscale
+tail -f /dev/null
