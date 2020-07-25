@@ -43,11 +43,4 @@ EXPOSE 6603
 
 ENV PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 
-#WORKDIR /
-
-ADD start /start
-ENTRYPOINT ["/start"]
-
-#ENTRYPOINT ["/usr/bin/maxscale -f /etc/maxscale.cnf -U maxscale"]
-#CMD tail -f /dev/null
-#CMD /usr/bin/maxscale -f /etc/maxscale.cnf -U maxscale
+ENTRYPOINT ["maxscale", "-d", "-U", "maxscale", "-f", "/etc/maxscale.cnf"]
